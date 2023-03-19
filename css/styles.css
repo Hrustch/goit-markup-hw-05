@@ -18,7 +18,7 @@ ul {
 
 *:hover,
 *:focus {
-	transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+	transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1) cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 img {
@@ -174,7 +174,7 @@ body {
 	font-weight: 500;
 	font-size: 16px;
 	line-height: 1.5;
-	transition: 0.25s;
+	transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 	padding-top: 12px;
 	padding-bottom: 12px;
 	padding-left: 24px;
@@ -184,7 +184,7 @@ body {
 .filter_button button:hover {
 	cursor: pointer;
 	box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 2px 1px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
-	transition: 0.25s;
+	transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .filter_button:first-child button {
@@ -225,7 +225,7 @@ body {
 	text-decoration: none;
 }
 .portfolio_item a:hover {
-	transition: 0.25s;
+	transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 	box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
 }
 
@@ -277,13 +277,13 @@ body {
 .contact_info a:hover,
 .contact_info a:active {
 	color: var(--pressed_color);
-	transition: 0.25s;
+	transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .contact_info:focus,
 .site_nav:focus {
 	color: var(--pressed_color);
-	transition: 0.25s;
+	transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .web {
@@ -357,7 +357,7 @@ body {
 
 .order_button:hover {
 	background-color: var(--pressed_color);
-	transition: 0.25s;
+	transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .order_text {
@@ -451,7 +451,7 @@ body {
 .social_media_lnk li a:hover,
 .social_media_lnk li a:focus {
 	background-color: var(--pressed_color);
-	transition: 0.25s;
+	transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .social_media_lnk li svg {
 	max-width: 16px;
@@ -503,22 +503,30 @@ body {
 .customers_list li svg {
 	max-width: 104px;
 	max-height: 56px;
+	fill: var(--secondary_color);
 }
 
 .customers_list li a {
+	display: flex;
+    align-items: center;
+    justify-content: center;
 	fill: var(--secondary_color);
-	display: inline-block;
 	height: 88px;
 	width: 168px;
 	border: 1px solid var(--secondary_color);
 	border-radius: 4px;
 }
-
-.customers_list li a:hover,
-.customers_list li a:focus {
-	border: 1px solid var(--pressed_color);
+.customers_list li a:focus svg,
+.customers_list li a:hover svg {
 	fill: var(--pressed_color);
-	transition: 0.25s;
+	transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+.customers_list li a:focus,
+.customers_list li a:hover {
+	border-color: var(--pressed_color);
+	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+	transition-duration: 250ms;
+	transition-property: border-color;
 }
 
 .footer_cont {
@@ -552,7 +560,7 @@ body {
 .dark_social_media_lnk li a:hover,
 .dark_social_media_lnk li a:focus {
 	background-color: var(--success_color);
-	transition: 0.25s;
+	transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .dark_social_media_lnk li svg {
@@ -595,7 +603,7 @@ body {
 	font-weight: 500;
 	font-size: 16px;
 	line-height: 1.5;
-	transition: 0.25s;
+	transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .filter_button > button:hover {
@@ -604,7 +612,7 @@ body {
 	background-color: var(--pressed_color);
 	color: var(--white_color);
 	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-	transition: 250ms;
+	transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .filter_button:first-child > button {
@@ -635,7 +643,7 @@ body {
 	top: 0;
 	left: 0;
 	pointer-events: all;
-	transition: 250ms;
+	transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal {
@@ -668,7 +676,7 @@ body {
 .close:focus {
 	background-color: var(--pressed_color);
 	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-	transition: 250ms;
+	transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 	fill: var(--white_color);
 }
 
@@ -713,10 +721,10 @@ body {
 	padding-right: 32px;
 
 	transform: translateY(0);
-	transition: 0.25s;
+	transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .portfolio_item > a:hover .portfolio_overlay div {
 	transform: translateY(-100%);
-	transition: 0.25s;
+	transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
