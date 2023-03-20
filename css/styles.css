@@ -137,6 +137,9 @@ body {
 	display: flex;
 	gap: 24px;
 }
+.features_ul h3{
+	margin-bottom: 3px;
+}
 
 .team-section h2 {
 	text-align: center;
